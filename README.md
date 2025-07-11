@@ -6,10 +6,10 @@
 
 <!-- PROJECT LOGO -->
 <br />
-  <h3 align="center">YoloV8 TensorRT CPP</h3>
+  <h3 align="center">YoloV12 TensorRT CPP</h3>
   <p align="center">
     <b>
-    A C++ Implementation of YoloV8 using TensorRT
+    A C++ Implementation of YoloV12 using TensorRT
     </b>
     <br/>
     Supports object detection, semantic segmentation, and body pose estimation.
@@ -35,7 +35,7 @@ Please feel free to reach out via [LinkedIn](https://www.linkedin.com/in/cyrus-b
 
 
 ### Getting Started
-This project demonstrates how to use the TensorRT C++ API to run GPU inference for YoloV8. 
+This project demonstrates how to use the TensorRT C++ API to run GPU inference for YoloV12. 
 It makes use of my other project [tensorrt-cpp-api](https://github.com/cyrusbehr/tensorrt-cpp-api) to run inference behind the scene, so make sure you are familiar with that project.
 
 ### Prerequisites
@@ -59,8 +59,8 @@ It makes use of my other project [tensorrt-cpp-api](https://github.com/cyrusbehr
 - **Note:** Be sure to use the `--recursive` flag as this repo makes use of git submodules. 
 
 ### Converting Model from PyTorch to ONNX
-- Navigate to the [official YoloV8 repository](https://github.com/ultralytics/ultralytics) and download your desired version of the model (ex. YOLOv8x).
-  - The code also supports semantic segmentation models out of the box (ex. YOLOv8x-seg) and pose estimation models (ex. yolov8x-pose.onnx).
+- Navigate to the [official YoloV8 repository](https://github.com/ultralytics/ultralytics) and download your desired version of the model (ex. YOLOv12x).
+  - The code also supports semantic segmentation models out of the box (ex. YOLOv12x-seg) and pose estimation models (ex. yolov12x-pose.onnx).
 - `pip3 install ultralytics`
 - Navigate to the `scripts/` directory and run the following:
 - ```python3 pytorch2onnx.py --pt_path <path to your pt file>```
@@ -101,15 +101,15 @@ Benchmarks run on NVIDIA GeForce RTX 3080 Laptop GPU, Intel(R) Core(TM) i7-10870
 
 | Model        | Total Time | Preprocess Time | Inference Time | Postprocess Time |
 |--------------|------------|-----------------|----------------|------------------|
-| yolov8n      | 3.613 ms   | 0.081 ms        | 1.703 ms       | 1.829 ms         |
-| yolov8n-pose | 2.107 ms   | 0.091 ms        | 1.609 ms       | 0.407 ms         |
-| yolov8n-seg  | 15.194 ms  | 0.109 ms        | 2.732 ms       | 12.353 ms        |
+| yolov12n      | 3.613 ms   | 0.081 ms        | 1.703 ms       | 1.829 ms         |
+| yolov12n-pose | 2.107 ms   | 0.091 ms        | 1.609 ms       | 0.407 ms         |
+| yolov12n-seg  | 15.194 ms  | 0.109 ms        | 2.732 ms       | 12.353 ms        |
 
 | Model   	| Precision 	| Total Time 	| Preprocess Time 	| Inference Time 	| Postprocess Time 	|
 |---------	|-----------	|------------	|-----------------	|----------------	|------------------	|
-| yolov8x 	| FP32      	| 25.819 ms  	| 0.103 ms        	| 23.763 ms      	| 1.953 ms         	|
-| yolov8x 	| FP16      	| 10.147 ms  	| 0.083 ms        	| 7.677 ms       	| 2.387 ms         	|
-| yolov8x 	| INT8      	| 7.32 ms    	| 0.103 ms        	| 4.698 ms       	| 2.519 ms         	|
+| yolov12x 	| FP32      	| 25.819 ms  	| 0.103 ms        	| 23.763 ms      	| 1.953 ms         	|
+| yolov12x 	| FP16      	| 10.147 ms  	| 0.083 ms        	| 7.677 ms       	| 2.387 ms         	|
+| yolov12x 	| INT8      	| 7.32 ms    	| 0.103 ms        	| 4.698 ms       	| 2.519 ms         	|
 
 TODO: Need to improve postprocessing time using CUDA kernel. 
 
